@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Места для Мероприятий</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .venue-section {
+            width: 60%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+            background-color: #fff;
+            justify-content: center;
+            align-content: center;
+            margin: 0 auto;
+        }
+
+        .venue-block {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            background: radial-gradient(circle at 25% top, rgb(228, 169, 255), rgb(178, 178, 255));
+        }
+
+        .venue-block h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .venue-block p {
+            color: #666;
+        }
+
+        /* Стили для кнопки бронирования */
+        .booking-button {
+            background-color: #2196F3;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+            border-radius: 20px;
+        }
+
+        .booking-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Стили для всплывающей формы бронирования */
+        .form-popup {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            right: 15px;
+            border: 3px solid #f1f1f1;
+            z-index: auto;
+            border-radius: 20px;
+        }
+
+        /* Стили для контейнера формы */
+        .form-container {
+            max-width: 300px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 20px;
+        }
+
+        /* Стили для кнопок в форме */
+        .form-container .btn {
+            background-color: #1976D2;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+            font-weight: bold;
+            border-radius: 20px;
+
+        }
+
+        .form-container .cancel {
+            background-color: #448AFF;
+            border-radius: 20px;
+
+        }
+
+        /* Стили для полей ввода и текстовой области */
+        .form-container input[type=text],
+        .form-container input[type=tel],
+        .form-container input[type=number],
+        .form-container textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .form-container textarea {
+            height: 100px;
+            resize: vertical;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="venue-section">
+        <div class="venue-block">
+            <h3>Зал "Созвездие"</h3>
+            <p>Адрес: г. Москва, ул. Космонавтов, д. 10</p>
+            <p>Свободные даты: 12.06.2024, 19.06.2024</p>
+            <button class="booking-button" onclick="openBookingForm()">Забронировать</button>
+        </div>
+        <div class="venue-block">
+            <h3>Банкетный зал "Элегант"</h3>
+            <p>Адрес: г. Санкт-Петербург, наб. Реки Фонтанки, д. 50</p>
+            <p>Свободные даты: 15.06.2024, 22.06.2024</p>
+            <button class="booking-button" onclick="openBookingForm()">Забронировать</button>
+        </div>
+        <div class="venue-block">
+            <h3>Дворец "Кристалл"</h3>
+            <p>Адрес: г. Санкт-Петербург, ул. Дворцовая наб., д. 1</p>
+            <p>Свободные даты: 06.07.2024, 13.07.2024</p>
+            <button class="booking-button" onclick="openBookingForm()">Забронировать</button>
+        </div>
+        <div class="venue-block">
+            <h3>Отель "Империал"</h3>
+            <p>Адрес: г. Санкт-Петербург, Невский проспект, д. 22</p>
+            <p>Свободные даты: 09.07.2024, 16.07.2024</p>
+            <button class="booking-button" onclick="openBookingForm()">Забронировать</button>
+        </div>
+        <div class="venue-block">
+            <h3>Клуб "Наутилус"</h3>
+            <p>Адрес: г. Санкт-Петербург, ул. Рубинштейна, д. 30</p>
+            <p>Свободные даты: 19.07.2024, 26.07.2024</p>
+            <button class="booking-button" onclick="openBookingForm()">Забронировать</button>
+        </div>
+        <div class="venue-block">
+            <h3>Галерея "Эпоха"</h3>
+            <p>Адрес: г. Санкт-Петербург, ул. Итальянская, д. 17</p>
+            <p>Свободные даты: 23.07.2024, 30.07.2024</p>
+            <button class="booking-button" onclick="openBookingForm()">Забронировать</button>
+        </div>
+        <div class="venue-block">
+            <h3>Арт-пространство "Лофт"</h3>
+            <p>Адрес: г. Москва, ул. Чистопрудный бульвар, д. 23</p>
+            <p>Свободные даты: 05.07.2024, 12.07.2024</p>
+            <button class="booking-button" onclick="openBookingForm()">Забронировать</button>
+        </div>
+        <div class="venue-block">
+            <h3>Терраса "Панорама"</h3>
+            <p>Адрес: г. Москва, Кутузовский проспект, д. 36</p>
+            <p>Свободные даты: 08.07.2024, 15.07.2024</p>
+            <button class="booking-button" onclick="openBookingForm()">Забронировать</button>
+        </div>
+        <div class="venue-block">
+            <h3>Ресторан "Гурман"</h3>
+            <p>Адрес: г. Москва, ул. Покровка, д. 40</p>
+            <p>Свободные даты: 18.07.2024, 25.07.2024</p>
+            <button class="booking-button" onclick="openBookingForm()">Забронировать</button>
+        </div>
+    </section>
+
+    <!-- Форма бронирования -->
+    <div class="form-popup" id="bookingForm">
+        <form action="/submit-booking.html" class="form-container">
+            <h2>Форма Бронирования</h2>
+
+            <label for="firstName"><b>Имя</b></label>
+            <input type="text" placeholder="Введите ваше имя" name="firstName" required>
+
+            <label for="lastName"><b>Фамилия</b></label>
+            <input type="text" placeholder="Введите вашу фамилию" name="lastName" required>
+
+            <label for="patronymic"><b>Отчество</b></label>
+            <input type="text" placeholder="Введите ваше отчество" name="patronymic">
+
+            <label for="phone"><b>Номер телефона</b></label>
+            <input type="tel" placeholder="Введите ваш номер телефона" name="phone" required>
+
+            <label for="guests"><b>Количество гостей</b></label>
+            <input type="number" placeholder="Введите количество гостей" name="guests" required>
+
+            <label for="comments"><b>Комментарии</b></label>
+            <textarea placeholder="Дополнительные услуги и пожелания" name="comments"></textarea>
+
+            <button type="submit" class="btn">Отправить Заявку</button>
+            <button type="button" class="btn cancel" onclick="closeBookingForm()">Закрыть</button>
+        </form>
+    </div>
+
+    <script>
+        // Функции для открытия и закрытия формы бронирования
+        function openBookingForm() {
+            document.getElementById("bookingForm").style.display = "block";
+        }
+
+        function closeBookingForm() {
+            document.getElementById("bookingForm").style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>

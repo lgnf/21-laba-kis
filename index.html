@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Name - Организация праздников</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="assets/img/new logo ballon.png" alt="Логотип">
+            <span>Праздник в каждый дом</span>
+        </div>
+        <nav class="navigation">
+            <a href="#sales">Акции</a>
+            <a href="#search">Поиск</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="header-section">
+            <h1>Праздник в каждый дом</h1>
+            <p>Создадим лучший праздник в вашей жизни!</p>
+            <a class="btn-bgstroke" href="#search">Ориганизовать</a>
+        </section>
+
+        <h2 style="padding-top: 20px; text-align: center;">Алгоритм организации мероприятия:</h2>
+
+        <section class="booking-section">
+            <div class="booking-step">
+                <img src="assets/img/01.png">
+                <div>
+                    <h3>Шаг 1: Выбор типа мероприятия</h3>
+                    <p>Выберите тип праздника, который вы хотите отпраздновать (например, день рождения, свадьба,
+                        корпоратив).</p>
+                </div>
+            </div>
+            <div class="booking-step">
+                <img src="assets/img/02.png">
+                <div>
+                    <h3>Шаг 2: Указание деталей</h3>
+                    <p>Заполните форму, указав желаемую дату, количество гостей и предпочтения по месту проведения.</p>
+                </div>
+            </div>
+            <div class="booking-step">
+                <img src="assets/img/03.png">
+                <div>
+                    <h3>Шаг 3: Выбор услуг</h3>
+                    <p>Отметьте дополнительные услуги, которые вы хотели бы добавить (например, кейтеринг, музыка,
+                        фотограф).</p>
+                </div>
+            </div>
+            <div class="booking-step">
+                <img src="assets/img/04.png">
+                <div>
+                    <h3>Шаг 4: Консультация с менеджером</h3>
+                    <p>Свяжитесь с нашим менеджером для уточнения всех деталей и ваших пожеланий.</p>
+                </div>
+            </div>
+        </section>
+
+        <h2 style="padding-top: 10px; text-align: center;">О нас:</h2>
+
+        <div class="company-section">
+            <div class="goal-motto">
+                <h3>Наша цель</h3>
+                <p>Главная цель компании – сделать праздничные дни незабываемыми для детей и их родителей.</p>
+            </div>
+            <div class="goal-motto">
+                <h3>Наш девиз</h3>
+                <p>Девиз компании «Праздник в каждый дом» - Подарим волшебство для Ваших детей!</p>
+            </div>
+        </div>
+
+        <h2 style="padding-top: 10px; text-align: center;">Отзывы:</h2>
+
+        <div class="otzivi">
+            <div class="otziv">
+                <img src="assets/img/female.svg" alt="avatar">
+                <p><span>Марина Белова</span> г. Москва</p>
+                <p>Я не могу выразить, насколько я благодарен этой компании за организацию дня рождения моего сына.
+                    Всё было продумано до мелочей, а аниматоры просто волшебники! Спасибо за незабываемый праздник!</p>
+            </div>
+            <div class="otziv">
+                <img src="assets/img/male.svg" alt="avatar">
+                <p><span>Алексей Фролов</span> г. Санкт-Петербург</p>
+                <p>Наша свадьба была как из сказки, и это всё благодаря вашей команде. Отличная работа, внимание к
+                    деталям
+                    и искреннее желание сделать наш день особенным - всё это не осталось без внимания. Спасибо вам!</p>
+            </div>
+            <div class="otziv">
+                <img src="assets/img/female.svg" alt="avatar">
+                <p><span>Ирина Панова</span> г. Санкт-Петербург</p>
+                <p>Организация превзошла все наши ожидания. Корпоратив прошёл на высшем уровне, и
+                    все сотрудники в восторге. Профессионализм и креативность команды заслуживают особой похвалы!</p>
+            </div>
+            <div class="otziv">
+                <img src="assets/img/male.svg" alt="avatar">
+                <p><span>Вячеслав Нюхалов</span> г. Москва</p>
+                <p>Я хотел бы выразить огромную благодарность за организацию юбилея моих родителей. Всё было
+                    организовано
+                    просто идеально, и гости до сих пор делятся впечатлениями. Ваша команда сделала этот день
+                    по-настоящему
+                    особенным!</p>
+            </div>
+        </div>
+
+        <h2 style="padding-top: 10px; padding-bottom: 10px; text-align: center;">Поиск локаций для проведения:</h2>
+
+        <form id="search" class="booking-form" action="/search.html" method="get">
+            <label for="region">Выбор региона:</label>
+            <select name="region" id="region">
+                <option value="moscow">Москва</option>
+                <option value="spb">Санкт-Петербург</option>
+            </select>
+            <br>
+            <label for="date">Дата мероприятия:</label>
+            <input type="date" id="date" name="date">
+            <br>
+            <label for="adults">Количество взрослых:</label>
+            <input type="number" id="adults" name="adults" min="1" max="50">
+            <br>
+            <label for="children">Количество детей:</label>
+            <input type="number" id="children" name="children" min="0" max="50">
+            <br>
+            <input type="submit" value="Поиск">
+        </form>
+
+        <section id="sales" class="promotion-section">
+            <div class="promotion-block">
+                <img src="assets/img/kinodeti.png" alt="Акция 1">
+                <h3>Волшебный старт</h3>
+                <p>Забронируйте детский праздник и получите в подарок анимационную программу с любимыми героями
+                    мультфильмов. Пусть ваше мероприятие начнется с волшебства!
+                </p>
+            </div>
+            <div class="promotion-block">
+                <img src="assets/img/svadba (Пользовательское).png" alt="Акция 2">
+                <h3>Свадебная мечта</h3>
+                <p>Организуйте свадьбу своей мечты и воспользуйтесь специальной скидкой 20% на декор зала. Мы поможем
+                    создать атмосферу романтики и незабываемости!
+                </p>
+            </div>
+            <div class="promotion-block">
+                <img src="assets/img/karnavak.jpg" alt="Акция 3">
+                <h3>Корпоративный карнавал</h3>
+                <p>Планируете корпоратив? Закажите полный пакет услуг и получите бесплатный кейтеринг для вашего
+                    коллектива. Сделайте ваше мероприятие ярким и запоминающимся!
+                </p>
+            </div>
+        </section>
+
+        <br>
+
+        <div class="subscription-section" style="margin-bottom: 20px;">
+            <h4>Получайте специальные акции на ваш email</h4>
+            <form class="subscription-form" action="/subscribe.html" method="post" onsubmit="showAlert(event)">
+                <input type="email" id="email" name="email" placeholder="Введите ваш email" required>
+                <input type="submit" value="Подписаться">
+            </form>
+        </div>
+
+
+        <div class="alert" id="alertBox">Вы успешно подписались на рассылку!</div>
+
+        <script>
+            function showAlert(event) {
+                event.preventDefault(); // Предотвращаем отправку формы
+                var alertBox = document.getElementById('alertBox');
+                alertBox.style.display = 'block'; // Показываем всплывающее сообщение
+                setTimeout(function () {
+                    alertBox.style.display = 'none'; // Скрываем сообщение через 3 секунды
+                }, 5000);
+            }
+        </script>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-phone">8 (800) 111-20-20</div>
+            <nav class="navigation">
+                <a href="#">Главная</a>
+                <a href="#sales">Акции</a>
+                <a href="#search">Поиск</a>
+            </nav>
+        </div>
+    </footer>
+
+</body>
+
+</html>
